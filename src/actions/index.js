@@ -4,14 +4,7 @@ import connectToDB from "@/database"
 import User from "@/models/user";
 import { revalidatePath } from "next/cache";
 
-// to convert into server action page
-// for theory, practiced below
-// export async function fetchListOfProducts(){
-//     const res = await fetch('https://dummyjson.com/products')
-//     const data = await res.json()
-
-//     return data?.products
-// }
+// Actual Practice
 
 // add a user action
 export async function addNewUserAction(formData, pathToRevalidate) {
@@ -134,4 +127,15 @@ export async function deleteUserAction(currentUserID, pathToRevalidate){
             message: 'Some error occured! Please try again'
         }
     }
+}
+
+
+
+// to convert into server action page
+// for theory, practiced below
+export async function fetchListOfProducts(){
+    const res = await fetch('https://dummyjson.com/products')
+    const data = await res.json()
+
+    return data?.products
 }
